@@ -1320,7 +1320,7 @@ def InverseDynamicsTrajectory(thetamat, dthetamat, ddthetamat, g, \
     dthetamat = np.array(dthetamat).T
     ddthetamat = np.array(ddthetamat).T
     Ftipmat = np.array(Ftipmat).T
-    taumat = np.array(thetamat).copy()
+    taumat = np.empty(thetamat.shape, dtype=float)
     for i in range(np.array(thetamat).shape[1]):
         taumat[:, i] \
         = InverseDynamics(thetamat[:, i], dthetamat[:, i], \
